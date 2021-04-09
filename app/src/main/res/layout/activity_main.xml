@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/instructions_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="64dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_32"
+        android:text="@string/str_instructions"/>
+
+    <TextView
+        android:id="@+id/question_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/instructions_text_view"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_35"
+        tools:text="what's your number?" />
+
+    <TextView
+        android:id="@+id/result_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/question_text_view"
+        android:layout_marginTop="80dp"
+        android:layout_centerInParent="true"
+        android:textColor="@color/teal_700"
+        android:textSize="@dimen/text_size_35"
+        android:visibility="invisible"
+        tools:text="your number is 4" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_reset"
+        android:layout_marginStart="@dimen/margin_sixteen"
+        android:layout_marginEnd="@dimen/margin_sixteen"
+        android:layout_marginBottom="@dimen/margin_thirty_two">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            app:srcCompat="@drawable/ic_arrow_downward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_circle_green"
+            android:onClick="clickDownwardArrow"
+            android:contentDescription="@string/str_arrow_down_desc" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            app:srcCompat="@drawable/ic_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/background_circle_beige"
+            android:onClick="clickSuccess"
+            android:contentDescription="@string/str_success_desc" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            app:srcCompat="@drawable/ic_arrow_upward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/background_circle_green"
+            android:onClick="clickUpwardArrow"
+            android:contentDescription="@string/str_arrow_up_desc" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/margin_eight"
+        android:layout_marginTop="@dimen/margin_eight"
+        android:layout_marginEnd="@dimen/margin_eight"
+        android:layout_marginBottom="@dimen/margin_eight"
+        android:background="@color/beige_rose"
+        android:onClick="clickReset"
+        android:text="@string/str_reset" />
+
+</RelativeLayout>
